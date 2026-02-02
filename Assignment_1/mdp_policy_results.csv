@@ -1,0 +1,10 @@
+User State,Optimal Policy,Value (LTV)
+Loyal_Active,Do Nothing,727.72
+Loyal_Inactive,Do Nothing,782.89
+Loyal_Neutral,Do Nothing,820.65
+Mid_Active,Do Nothing,258.87
+Mid_Inactive,Send Coupon,565.95
+Mid_Neutral,Send Coupon,419.91
+New_Active,Do Nothing,56.46
+New_Inactive,Do Nothing,161.02
+New_Neutral,Do Nothing,187.07
