@@ -1,0 +1,10 @@
+__pycache__/
+*.py[cod]
+*.pyo
+.env
+venv/
+.venv/
+
+misq_hf.db
+results_*.csv
+!results/*.csv
