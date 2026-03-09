@@ -104,3 +104,7 @@ A few things stand out:
 ## References
 
 Hu et al., "Uncertainty of Thoughts: Uncertainty-Aware Planning Enhances Information Seeking in Large Language Models", NeurIPS 2024. https://arxiv.org/abs/2402.03271
+
+## Record
+
+[Watch the recording here](https://drive.google.com/file/d/1LtDqivEklshqJpbtCZ42xWF458xPDDfL/view?usp=sharing)
