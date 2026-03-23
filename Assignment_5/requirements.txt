@@ -1,0 +1,6 @@
+numpy
+gymnasium[mujoco]
+torch
+matplotlib
+seaborn
+colorama

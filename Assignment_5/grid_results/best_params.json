@@ -1,0 +1,32 @@
+{
+  "Swimmer-v4": {
+    "best_params": {
+      "num_envs": 8,
+      "pi_lr": 0.001,
+      "v_lr": 0.01,
+      "gamma": 0.99,
+      "lam": 0.0
+    },
+    "best_score": 50.758165015938076
+  },
+  "HalfCheetah-v4": {
+    "best_params": {
+      "num_envs": 8,
+      "pi_lr": 0.001,
+      "v_lr": 0.01,
+      "gamma": 0.99,
+      "lam": 0.95
+    },
+    "best_score": -278.5542140806632
+  },
+  "Hopper-v4": {
+    "best_params": {
+      "num_envs": 4,
+      "pi_lr": 0.001,
+      "v_lr": 0.001,
+      "gamma": 0.99,
+      "lam": 1.0
+    },
+    "best_score": 488.71590778315505
+  }
+}
