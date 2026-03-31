@@ -1,0 +1,12 @@
+Budget: ~13k trajectories/seed  |  Paper budget: ~270k trajectories/seed
+
+Algorithm    Ours (success%)    Paper (success%)
+-----------  -----------------  ----------------
+Pretrained        33.0%              34.2%
+REINFORCE         35.7%              73.0%
+PPO               29.0%              49.1%
+Poly-PPO          33.7%              80.8%
+
+REINFORCE: 400 iters × 32 eps/iter, 3 seeds avg
+PPO:       400 iters × 32 eps/iter, critic_warmup=100, 3 seeds avg
+Poly-PPO:  250 iters, N=4 n=4 M=4 p=1 W=5, 3 seeds avg
