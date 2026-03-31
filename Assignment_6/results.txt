@@ -1,23 +1,8 @@
 
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.270, success=33.0%
-reinforce    reward=0.273, success=32.7%
-reinforce    reward=0.300, success=35.7%
+Goto (BabyAI-GoTo-v0) — reproduced from Table 1, Hamid et al. 2026
+Budget: ~13k trajectories/seed (paper: ~270k)
 
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.238, success=28.0%
-
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.224, success=26.0%
-ppo          reward=0.252, success=29.7%
-
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.289, success=34.0%
-poly_ppo     reward=0.244, success=28.7%
-
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.297, success=37.0%
-poly_ppo     reward=0.246, success=28.3%
-
-Goto (BabyAI) | n_iters=1000
-Pretrained:  reward=0.273, success=33.0%
+Pretrained:  reward=0.273, success=33.0%   (paper: 34.2%)
+reinforce    reward=0.300, success=35.7%   (paper: 73.0%)   [400 iters × 32 eps, 3 seeds]
+ppo          (running...)
+poly_ppo     (running...)
