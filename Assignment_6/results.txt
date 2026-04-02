@@ -1,8 +1,0 @@
-
-Goto (BabyAI-GoTo-v0) — reproduced from Table 1, Hamid et al. 2026
-Budget: ~13k trajectories/seed (paper: ~270k)
-
-Pretrained:  reward=0.273, success=33.0%   (paper: 34.2%)
-reinforce    reward=0.300, success=35.7%   (paper: 73.0%)   [400 iters × 32 eps, 3 seeds]
-ppo          (running...)
-poly_ppo     (running...)
