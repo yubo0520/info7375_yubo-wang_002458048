@@ -1,0 +1,14 @@
+{
+  "current": "bench_step6_final_scores.json",
+  "baseline": "/mnt/d/GitHub/info7375_yubo-wang_002458048/final/part_2/task56_iso_new/step3_baselines.json",
+  "rows": [
+    {
+      "benchmark": "bird",
+      "current": 0.4363636363636365,
+      "step3": 0.0455,
+      "delta": 0.3908636363636365,
+      "n": 22,
+      "kind": "sql"
+    }
+  ]
+}

@@ -1,0 +1,42 @@
+{
+  "task": "step5",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "ckpt_dir": "/runs/task56_new/step5_dev",
+  "benchmarks": {
+    "bamboogle": {
+      "kind": "search",
+      "n": 20,
+      "exact_avg": 0.05,
+      "score_avg": 0.32499999999999996,
+      "main_metric": 0.05
+    },
+    "2wiki": {
+      "kind": "search",
+      "n": 20,
+      "exact_avg": 0.3,
+      "score_avg": 0.215,
+      "main_metric": 0.3
+    },
+    "hotpotqa": {
+      "kind": "search",
+      "n": 20,
+      "exact_avg": 0.1,
+      "score_avg": 0.355,
+      "main_metric": 0.1
+    },
+    "musique": {
+      "kind": "search",
+      "n": 20,
+      "exact_avg": 0.05,
+      "score_avg": 0.10000000000000002,
+      "main_metric": 0.05
+    },
+    "gaia": {
+      "kind": "agentic",
+      "n": 20,
+      "exact_avg": 0.1,
+      "score_avg": 0.09000000000000002,
+      "main_metric": 0.1
+    }
+  }
+}

@@ -1,0 +1,14 @@
+{
+  "task": "step6",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "ckpt_dir": "/runs/task56_new/step6_dev",
+  "benchmarks": {
+    "bird": {
+      "kind": "sql",
+      "n": 22,
+      "exact_avg": 0.0,
+      "score_avg": 0.4363636363636365,
+      "main_metric": 0.4363636363636365
+    }
+  }
+}

@@ -1,0 +1,9 @@
+{
+  "task": "step6",
+  "model": "Qwen/Qwen3.5-0.8B",
+  "dev": false,
+  "train_size": 600,
+  "max_steps": 200,
+  "eval_n": 50,
+  "eval_acc": 0.4799999999999997
+}
