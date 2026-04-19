@@ -9,7 +9,7 @@ export OPENAI_API_BASE="${OPENAI_API_BASE:-https://dashscope.aliyuncs.com/compat
 export OPENAI_BASE_URL="${OPENAI_API_BASE}"
 export SERPER_API_KEY="${SERPER_API_KEY:-6e7f9ba58720edf774a19b307083bdad6e278961}"
 
-MODEL="litellm-openai/qwen3.5-27b"
+MODEL="qwen3.5-27b"
 LABEL="qwen3.5-27b"
 N="${N:-30}"
 TEST_DIR="${SCRIPT_DIR}/AgentFlow/test"

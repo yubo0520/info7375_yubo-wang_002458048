@@ -36,8 +36,8 @@ def create_llm_engine(model_string: str, use_cache: bool = False, is_multimodal:
         }
         return ChatAzureOpenAI(**config)
 
-    # === OpenAI (GPT) ===
-    elif any(x in model_string for x in ["gpt", "o1", "o3", "o4"]):
+
+    elif any(x in model_string for x in ["gpt", "o1", "o3", "o4", "qwen"]):
         from .openai import ChatOpenAI
         config = {
             "model_string": model_string,

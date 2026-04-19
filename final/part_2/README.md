@@ -188,3 +188,26 @@ The baseline file used by `compare_step3.py` is:
 task56_iso_new/step3_baselines.json
 ```
 
+## Results
+
+### Step 2: QA benchmarks (EM accuracy, n=30)
+
+| Model | Bamboogle | 2Wiki | HotpotQA | MuSiQue |
+|-------|----------:|------:|---------:|--------:|
+| qwen2.5-7b | 50.0% | 16.7% | 56.7% | 10.0% |
+| qwen3.5-2b | 46.7% | 10.0% | 43.3% | 0.0% |
+| qwen3.5-4b | 26.7% | 43.3% | 30.0% | 6.7% |
+| qwen3.5-9b | 70.0% | 66.7% | 50.0% | 6.7% |
+| qwen3.5-27b | **90.0%** | **83.3%** | **50.0%** | **16.7%** |
+
+qwen3.5-0.8b QA runs were not completed due to resource constraints.
+
+### Step 3: BIRD Text-to-SQL (execution accuracy, n=22)
+
+| Model | BIRD Exec. Acc. |
+|-------|----------------:|
+| qwen3.5-0.8b | 4.6% |
+| qwen3.5-2b | 13.6% |
+| qwen3.5-4b | 50.0% |
+| qwen3.5-9b | 36.4% |
+| qwen3.5-27b | **68.2%** |

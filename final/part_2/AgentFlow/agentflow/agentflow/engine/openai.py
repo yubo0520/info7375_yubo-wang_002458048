@@ -6,6 +6,7 @@ except ImportError:
     raise ImportError("If you'd like to use OpenAI models, please install the openai package by running `pip install openai`, and add 'OPENAI_API_KEY' to your environment variables.")
 
 import os
+import re
 import json
 import base64
 import platformdirs
@@ -183,8 +184,52 @@ class ChatOpenAI(EngineLM, CachedEngine):
             )
             response = response.choices[0].message.parsed
 
-        # Chat models without structured outputs
-        elif self.is_chat_model and (not self.support_structured_output or response_format is None):
+        # Chat models without native structured outputs but response_format requested: use json_object mode + schema injection
+        elif self.is_chat_model and not self.support_structured_output and response_format is not None:
+            from pydantic import BaseModel as _BaseModel
+            import inspect as _inspect
+            schema_str = ""
+            if _inspect.isclass(response_format) and issubclass(response_format, _BaseModel):
+                schema_str = json.dumps(response_format.model_json_schema(), indent=2)
+            json_system_prompt = (
+                sys_prompt_arg
+                + "\n\nYou MUST respond with valid JSON only. No markdown code fences, no explanation, no extra text."
+                + (f"\nYour JSON must conform to this schema:\n{schema_str}" if schema_str else "")
+            )
+            extra = {}
+            if "qwen3" in self.model_string.lower():
+                extra["extra_body"] = {"enable_thinking": False}
+            raw_response = self.client.chat.completions.create(
+                model=self.model_string,
+                messages=[
+                    {"role": "system", "content": json_system_prompt},
+                    {"role": "user", "content": prompt},
+                ],
+                frequency_penalty=0,
+                presence_penalty=0,
+                stop=None,
+                temperature=temperature,
+                max_tokens=max_tokens,
+                top_p=top_p,
+                response_format={"type": "json_object"},
+                **extra,
+            )
+            raw_text = raw_response.choices[0].message.content
+            # Strip markdown fences if model ignored the instruction
+            clean = re.sub(r'^```(?:json)?\s*', '', raw_text.strip())
+            clean = re.sub(r'\s*```$', '', clean.strip())
+            try:
+                data = json.loads(clean)
+                if _inspect.isclass(response_format) and issubclass(response_format, _BaseModel):
+                    response = response_format(**data)
+                else:
+                    response = data
+            except Exception as parse_err:
+                print(f"[JSON parse fallback] failed to parse JSON for {self.model_string}: {parse_err}")
+                response = raw_text
+
+        # Chat models without structured outputs and no response_format
+        elif self.is_chat_model and response_format is None:
             extra = {}
             if "qwen3" in self.model_string.lower():
                 extra["extra_body"] = {"enable_thinking": False}
